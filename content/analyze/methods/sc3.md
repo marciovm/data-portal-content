@@ -2,7 +2,7 @@
 path: "/analyze/methods/methods-packages/sc3"
 date: "2018-09-14"
 title: "Single-cell consensus clustering (SC3)"
-author: "Martin Hemberg"
+author: "Martin Hemberg (SC3), Jon Manning (sc3-scripts)"
 description: "SC3 is an unsupervised clustering method for scRNA-seq data."
 githubUrl: "https://github.com/hemberg-lab/SC3"
 appUrl: "http://bioconductor.org/packages/SC3"
@@ -12,17 +12,29 @@ componentName: "analysisDetail"
 
 [![Build Status](http://www.bioconductor.org/shields/build/release/bioc/SC3.svg)](https://git.bioconductor.org/packages/SC3)
 
-[SC3](http://bioconductor.org/packages/SC3) is an unsupervised clustering method for scRNA-seq data. SC3 also estimates the number of clusters and it provides features to aid the biological interpretation of the clusters.
+[SC3](http://bioconductor.org/packages/SC3) is an unsupervised clustering method for scRNA-seq data. SC3 also estimates the number of clusters and it provides features to aid the biological interpretation of the clusters. [sc3-scripts](https://anaconda.org/bioconda/sc3-scripts) provides a set of simple wrappers with robust argument parsing for individual components of the SC3 package.
 
 # Use
 
-docker pull command pending
+```
+docker pull quay.io/repository/biocontainers/sc3-scripts:<version>
+```
 
-``docker run -v `pwd`:/sc3_data -w /sc3_data --rm sc3 Rscript /software/scripts/run_sc3.R --input="``[deng-reads.rds](https://github.com/hemberg-lab/scRNA.seq.course/raw/master/deng/deng-reads.rds)``" --cell_labels ``
+How to perform unsupervised clustering on scRNA-seq data (already QCed and normalised) in a SingleCellExperiment object 
 
+```
+curl -L -o deng-reads.rds https://github.com/hemberg-lab/scRNA.seq.course/raw/master/deng/deng-reads.rds
+
+docker run -v ${PWD}:/data -w /data --rm quay.io/repository/biocontainers/sc3-scripts:<version> sc3-sc3.R -i deng-reads.rds -o deng-sc3.rds 
+```
 
 # Validate 
-``docker run -v `pwd`:/sc3_data -w /sc3_data --rm sc3 Rscript /software/scripts/run_sc3.R --validate``
+Run this command to confirm your container produces correct reference output:
+
+```
+docker run -v ${PWD}:/data -w /data --rm quay.io/repository/biocontainers/sc3-scripts:<version> sc3-sc3-validate.R
+```
 
 # Contact
-Martin Hemberg (<a href="mailto://mh26@sanger.ac.uk">mh26@sanger.ac.uk</a>)
+Martin Hemberg, SC3 (<a href="mailto://mh26@sanger.ac.uk">mh26@sanger.ac.uk</a>)
+Jon Manning, sc3-scripts (<a href="mailto://jmanning@ebi.ac.uk">jmanning@ebi.ac.uk</a>)
