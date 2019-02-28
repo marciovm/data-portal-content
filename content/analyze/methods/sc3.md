@@ -1,8 +1,8 @@
 ---
 path: "/analyze/methods/methods-packages/sc3"
-date: "2018-09-14"
+date: "2019-02-28"
 title: "Single-cell consensus clustering (SC3)"
-author: "Martin Hemberg (SC3), EBI team (sc3-scripts)"
+author: "Martin Hemberg (SC3), Gene Expression Team (sc3-scripts)"
 description: "SC3 is an unsupervised clustering method for scRNA-seq data."
 githubUrl: "https://github.com/hemberg-lab/SC3"
 appUrl: "http://bioconductor.org/packages/SC3"
@@ -37,4 +37,4 @@ docker run -v ${PWD}:/data -w /data --rm quay.io/repository/biocontainers/sc3-sc
 
 # Contact
 Martin Hemberg, SC3 (<a href="mailto://mh26@sanger.ac.uk">mh26@sanger.ac.uk</a>)
-EBI team, sc3-scripts (<a href="mailto://team@ebi.ac.uk">team@ebi.ac.uk</a>)
+Gene Expression Team, sc3-scripts (<a href="mailto://gene-expression@ebi.ac.uk">gene-expression@ebi.ac.uk</a>)
