@@ -36,5 +36,5 @@ docker run -v ${PWD}:/data -w /data --rm quay.io/repository/biocontainers/sc3-sc
 ```
 
 # Contact
-Martin Hemberg, SC3 (<a href="mailto://mh26@sanger.ac.uk">mh26@sanger.ac.uk</a>)
+Martin Hemberg, SC3 (<a href="mailto://mh26@sanger.ac.uk">mh26@sanger.ac.uk</a>)  
 Gene Expression Team, sc3-scripts (<a href="mailto://gene-expression@ebi.ac.uk">gene-expression@ebi.ac.uk</a>)
